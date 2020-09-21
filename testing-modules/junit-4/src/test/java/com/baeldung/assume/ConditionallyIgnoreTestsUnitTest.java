@@ -12,11 +12,11 @@ public class ConditionallyIgnoreTestsUnitTest {
 
 
     @Test
-    public void whenAssumeThatCodeVersionIsNot2_thenIgnore() {
-        final int codeVersion = 1;
-        assumeThat(codeVersion, is(2));
+    public void whenAssumeThatOSIsNotLinux_thenIgnore() {
 
-        assertEquals("hello", "HELLO".toLowerCase());
+        assumeThat(System.getProperty("os.name"), is("Linux"));
+
+        assertEquals("LiNuX", "LINUX".toLowerCase());
     }
 
     @Test
